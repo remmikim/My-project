@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,6 +11,7 @@ public class MaterialChanger : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public GameObject particle;
     public Mesh[] shapes = new Mesh[2];
+    public OnMove moce;
     [SerializeField]
     private Renderer renderer;
     private AudioSource source;
