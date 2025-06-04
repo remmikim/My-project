@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MaterialChanger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class MaterialChanger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public Material baseMaterial;
     public Material selectedMaterial;
+
+    public GameObject particle;
     [SerializeField]
     private Renderer renderer;
 
@@ -16,6 +18,10 @@ public class MaterialChanger : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void OnPointerExit(PointerEventData eventData)
     {
         renderer.material = baseMaterial;
+    }
+        public void OnPointerClick(PointerEventData eventData)
+    {
+        particle.SetActive(true);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
